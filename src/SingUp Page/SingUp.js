@@ -28,9 +28,9 @@ const SingUp = () => {
       country: Yup.string().required("This is required Field"),
     }),
     onSubmit: (value) => {
-      console.log(data);
-      setData(JSON.stringify(value))
-      
+      const formData = []
+      formData.push(value)
+      setData([...formData,formData])
     }
   });
   return (
@@ -132,7 +132,7 @@ const SingUp = () => {
           <button type="submit">Submit</button>
         </form>
       </div>
-      {/* <div className="table">
+      <div className="table">
         <h1>User Information</h1>
         <table>
           <tbody>
@@ -160,7 +160,7 @@ const SingUp = () => {
             })}
           </tbody>
         </table>
-      </div> */}
+      </div>
     </div>
   );
 };
